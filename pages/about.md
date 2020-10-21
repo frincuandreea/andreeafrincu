@@ -3,7 +3,7 @@ layout: page
 title: About me
 permalink: /about/
 feature-img: "assets/img/pexels/travel.jpeg"
-tags: [About, Archive]
+tags: [AboutMe]
 ---
 
 My name is Andreea (Frincu) Ciapsa and I am a Software Developer since 2010. 
@@ -37,9 +37,7 @@ maven, ant
 
 Git
 
-I started to write this blog because many many times I find myself searching in google "How to ..." do different stuff. I propose that every time I search something like that to actually write a post where I explain how to solve that respective problem. In this way I will make the life more easy for a person who is searching the same topic as me. I also want to have this blog as a collection of information where I can always come back every time I need to remember some topic which I solved in code. 
-
-Since my experience in writing on a blog starts now please forgive me any writing mistakes.   
+I started to write this blog because many many times I find myself searching in google "How to ..." do different stuff. I propose that every time I search something like that to actually write a post where I explain how to solve that respective problem. In this way I will make the life more easy for a person who is searching the same topic as me. I also want to have this blog as a collection of information where I can always come back every time I need to remember some topic which I solved in code.   
 
 ​
 
