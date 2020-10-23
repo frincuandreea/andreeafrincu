@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to convert @SlingServlet to @Component in AEM 6.4
-tags: [AEM, OSGI]
+tags: [AEM, OSGI, SlingServlet]
 ---
 
 
@@ -51,6 +51,7 @@ If we are converting the servlet above the we get the following result:
         "sling.servlet.paths=/pathtest/content",
         "sling.servlet.methods=get",
         "sling.servlet.methods=put",
+        "sling.core.servletName=com.servlet.TestServlet",
         Constants.SERVICE_VENDOR+"=Test Vendor",
         Constants.SERVICE_DESCRIPTION+"=Test description"
     }
@@ -68,3 +69,11 @@ public class TestServlet extends SlingAllMethodsServlet {
         }
 }
 ```
+Comparing the two portions of code we see immediate that before we were using the @SlingServlet annotation but now we use the @Component annotation and we referrer to servlet using the attribute "service ={Servlet.class}". A second part that change is the property paths and methods are now replace as following:
+
+* paths = {"/pathtest/content"} is replaced by "sling.servlet.paths=/pathtest/content"
+* methods = {"GET", "PUT"} are replaced by the properties "sling.servlet.methods=get" and "sling.servlet.methods=put"
+* name = "com.servlet.TestServlet" is replaced by the "sling.core.servletName=com.servlet.TestServlet"
+
+Pretty much this is it. It is not too complicated. What is really helpful is the Sling Apache documentation about servlets you can find it [ here ](https://sling.apache.org/documentation/the-sling-engine/servlets.html).
+
