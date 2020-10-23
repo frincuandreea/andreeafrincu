@@ -2,6 +2,7 @@
 layout: post
 title: How to convert @SlingServlet to @Component in AEM 6.4
 tags: [AEM, OSGI, SlingServlet]
+comments: true
 ---
 
 
