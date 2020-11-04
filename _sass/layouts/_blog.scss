@@ -48,13 +48,19 @@
 
 /* --- Post listing --- */
 .posts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center !important;
+
   .post-teaser {
     @extend %padding-post;
     width: 100%;
     margin-bottom: 0;
     display: inline-block;
     background-size: $feature-image-size;
-    border-bottom: 1px solid $border-color;
+    /*border-bottom: 1px solid $border-color;*/
 
     p a {
       @extend .body-link;
@@ -100,6 +106,73 @@
   }
 
   .excerpt {
-    margin-top: 1em;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+
+    @media screen and (max-width:$sm-break){
+
+    }
+    .post-teaser{
+      flex: 0 0 50%;
+      max-width: 45%;
+      margin-bottom: 3rem;
+      padding: 0px 0px 0px;
+      padding-left: 15px;
+      padding-right: 15px;
+      @media screen and (max-width: $break) {
+        flex: 0 0 95%;
+        max-width: 95%;
+      }
+
+      .card{
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        background-color: #ffffff;
+        background-clip: border-box;
+       box-shadow:  0 15px 35px rgba(50,50,93,0.1),0 5px 15px rgba(0,0,0,0.07) !important;
+        border-radius: 0.25rem;
+        min-height: 200px;
+      }
+      .card-body{
+        padding: 1.5rem;
+      }
+      .badge{
+        display: inline-block;
+        padding: .35rem .375rem;
+        font-size: 66%;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        padding-right: .875em;
+        padding-left: .875em;
+        text-transform: uppercase;
+        border-radius: 10rem;
+        color: #555;
+        background-color: rgba(222,222,222,0.5);
+      }
+    }
+}
+.category-filter{
+  display: flex;
+  list-style: none;
+  padding: 3% 9%;
+  margin-left: 0;
+  li{
+    list-style: none;
+    margin-right: 20px;
+    cursor: pointer;
+    &.selected-filter{
+      color: $selection-color;
+    }
+    &.category{
+      text-transform: uppercase;
+    }
   }
 }
