@@ -4,7 +4,7 @@ url: "https://andreea88.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Andreea Frincu                                    # site's title
-description: "A website with my blog posts and pages"      # used by search engines
+description: "Andreea Frincu blog posts about aem, java, javascript and so on."      # used by search engines
 avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
