@@ -2,6 +2,7 @@
 layout: post
 title: Using HTL in AEM application
 tags: [HTL, AEM]
+comments: true
 categories: AEM
 ---
 
