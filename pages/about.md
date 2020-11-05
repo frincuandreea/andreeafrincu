@@ -6,9 +6,14 @@ feature-img: "assets/img/pexels/travel.jpeg"
 tags: [AboutMe]
 ---
 
+
 Hello,
 
-My name is Andreea (Frincu) Ciapsa. I am a Software Developer since 2010. 
+my name is Andreea-Oana (Frincu) Ciapsa.                                      
+
+![](/andreeafrincu/assets/img/author/me.jpg) 
+
+I am a Software Developer since 2010. 
 
 During the years I worked on projects which involve frontend development but also backend development. I have learn so much and also in current days I am still learning. I always say to myself that life is about continuously learning and learning again.  
 
