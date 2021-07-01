@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Convert @SlingServlet to @Component
-tags: [AEM, OSGI, SlingServlet]
+tags: [AEM6.4, OSGI, SlingServlet, Component, Migration]
 comments: true
 categories: AEM
 ---

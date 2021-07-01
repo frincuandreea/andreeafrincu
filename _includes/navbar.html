@@ -21,7 +21,10 @@
     <!-- Menu -->
     <ul class="hide">
         {% assign name_page = "" %}
-
+        <li>
+            <a class="clear" aria-label="home" title="home}" href="{{  '/' | relative_url  }}">Home</a>
+        </li>
+        <li class="separator"> | </li>
         {% for page in site.pages %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
             <li class="separator"> | </li>
