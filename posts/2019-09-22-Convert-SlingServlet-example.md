@@ -1,11 +1,16 @@
 ---
-layout: post
 title: Convert @SlingServlet to @Component
-tags: [AEM6.4, OSGI, SlingServlet, Component, Migration]
+layout: post
+tags:
+- AEM6.4
+- OSGI
+- SlingServlet
+- Component
+- Migration
 comments: true
-categories: AEM
+categories:
+- AEM
 ---
-
 
 Last problem that I had to work was actually to convert all the apache felix annotation to the new R6 OSGI annotation. Anybody who is working in an AEM project knows that once you update your project to run with the AEM 6.4 server you have to update the annotation of all your services, servlets, components to the R6 OSGI.
 
@@ -78,4 +83,3 @@ Comparing the two portions of code we see immediate that before we were using th
 * name = "com.servlet.TestServlet" is replaced by the "sling.core.servletName=com.servlet.TestServlet"
 
 Pretty much this is it. It is not too complicated. What is really helpful is the Sling Apache documentation about servlets you can find it [ here ](https://sling.apache.org/documentation/the-sling-engine/servlets.html).
-

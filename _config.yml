@@ -44,3 +44,12 @@ exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules"]
 remote_theme: sylhare/Type-on-Strap                     # If using as a remote_theme in github
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
 fb_comment_id: ""
+jekyll_admin:
+  hidden_links:
+    - posts
+    - pages
+    - data
+    - assets
+    - drafts
+    - config
+  homepage: "pages"

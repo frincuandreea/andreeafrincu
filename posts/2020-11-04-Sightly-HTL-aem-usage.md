@@ -1,9 +1,12 @@
 ---
-layout: post
 title: Using HTL in AEM application
-tags: [HTL, AEM]
+layout: post
+tags:
+- HTL
+- AEM
 comments: true
-categories: AEM
+categories:
+- AEM
 ---
 
 Today I am going to write about HTL. HTL comes from HTML Template Language and is the recommended server-side template system for the HTML in AEM. This was introduced to take place of the JSP (JavaServer Pages) which was used in the previous versions of AEM.
