@@ -47,18 +47,13 @@ layout: default
   {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
   {% include tags_list.html tags=tag_list %}
 
-  {% include comments.html %}
+  {% include github-comments.html %}
 
 </article>
 
 <!-- Disqus -->
 {% if site.disqus_shortname or site.theme_settings.disqus_shortname %}
 {% include disqus.html %}{% endif %}
-<div class="page-content">
-  <div class="wrapper">
-    {% include github-comments.html %}
-  </div>
-</div>
 
 <!-- Post navigation -->
 {% if site.post_navigation  or site.theme_settings.post_navigation %}

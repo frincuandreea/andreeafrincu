@@ -1,5 +1,6 @@
 ---
 title: Using HTL in AEM application
+github_comments_issueid: 1
 layout: post
 tags:
 - HTL
