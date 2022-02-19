@@ -50,9 +50,9 @@
 .posts {
   display: flex;
   flex-wrap: wrap;
-  /*margin-right: -15px;
+  margin-right: -15px;
     margin-left: -15px;
-   justify-content: center !important;*/
+   justify-content: center !important;
 
   .post-teaser {
     @extend %padding-post;
