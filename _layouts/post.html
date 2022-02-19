@@ -52,6 +52,8 @@ layout: default
 </article>
 
 <!-- Disqus -->
+{% if site.disqus_shortname or site.theme_settings.disqus_shortname %}
+{% include disqus.html %}{% endif %}
 <div class="page-content">
   <div class="wrapper">
     {% include github-comments.html %}
