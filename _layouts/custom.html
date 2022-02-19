@@ -26,6 +26,12 @@ layout: default
 {% if site.disqus_shortname or site.theme_settings.disqus_shortname %}
 {% include disqus.html %}{% endif %}
 
+<div class="page-content">
+    <div class="wrapper">
+        {% include github-comments.html %}
+    </div>
+</div>
+
 <!-- Post navigation -->
 {% if site.post_navigation %}
 {% include post_nav.html %}
