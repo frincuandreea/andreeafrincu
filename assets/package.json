@@ -1,16 +1,17 @@
 {
-  "name": "type-on-strap-helper",
+  "name": "myblog",
   "version": "1.0.0",
-  "description": "Gulp file to manage the Type on Strap jekyll theme",
+  "description": "Gulp file to manage the Blog jekyll theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "update": "ncu dev -u",
-    "fix": "npm audit fix"
+    "fix": "npm audit fix",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sylhare/Type-on-Strap.git"
+    "url": "https://github.com/frincuandreea/andreeafrincu.git"
   },
   "keywords": [
     "jekyll"
@@ -20,8 +21,9 @@
   "bugs": {
     "url": "https://github.com/Sylhare/Type-on-Strap/issues"
   },
-  "homepage": "https://github.com/sylhare/Type-on-Strap#readme",
+  "homepage": "https://github.com/frincuandreea/andreeafrincu#readme",
   "devDependencies": {
+    "blog": "^1.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
