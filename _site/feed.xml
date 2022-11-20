@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://andreea88.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://andreea88.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-11-20T15:36:16+01:00</updated><id>https://andreea88.github.io/feed.xml</id><title type="html">Andreea Frincu</title><subtitle>Andreea Frincu blog posts about aem, java, javascript and so on.</subtitle><entry xml:lang="en"><title type="html">Using HTL in AEM application</title><link href="https://andreea88.github.io/aem/2020/11/04/Sightly-HTL-aem-usage.html" rel="alternate" type="text/html" title="Using HTL in AEM application" /><published>2020-11-04T00:00:00+01:00</published><updated>2020-11-04T00:00:00+01:00</updated><id>https://andreea88.github.io/aem/2020/11/04/Sightly-HTL-aem-usage</id><content type="html" xml:base="https://andreea88.github.io/aem/2020/11/04/Sightly-HTL-aem-usage.html"><![CDATA[<p>Today I am going to write about HTL. HTL comes from HTML Template Language and is the recommended server-side template system for the HTML in AEM. This was introduced to take place of the JSP (JavaServer Pages) which was used in the previous versions of AEM.</p>
+
+<p>I always notice that when somebody comes new into an AEM project and I am talking about HTL they do not have a clue what I am talking about. My advice if you want to start working with an AEM application please read the AEM documentation about HTL. I will write in this post what are the important points which you need to know in order to write server-side HTML.</p>
+
+<p>Before starting creating any component in AEM we need to know about the following topics in HTL:</p>
+
+<ol>
+  <li>Global Objects</li>
+  <li>Block Statements</li>
+  <li>Expression Language</li>
+</ol>
+
+<p><strong>Global Objects</strong></p>
+
+<p>In the first moment after you create the corresponding html file of your AEM component you need to know that you can access some objects which are called <em>Global Objects</em>.
+The most used global objects are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>properties</td>
+      <td>contains the list of properties of the current resource, for example your component; type org.apache.sling.api.resource.ValueMap</td>
+    </tr>
+    <tr>
+      <td>pageProperties</td>
+      <td>a list of page properties which contains your component; type org.apache.sling.api.resource.ValueMap</td>
+    </tr>
+    <tr>
+      <td>inheritedPageProperties</td>
+      <td>list of inherited page properties of the current page; type org.apache.sling.api.resource.ValueMap</td>
+    </tr>
+    <tr>
+      <td>currentPage</td>
+      <td>allow access to the current page where the component is included; type com.day.cq.wcm.api.Page</td>
+    </tr>
+    <tr>
+      <td>resource</td>
+      <td>allow access to the current resource in this case is the component resource; type org.apache.sling.api.resource.Resource</td>
+    </tr>
+    <tr>
+      <td>request</td>
+      <td>allow access to the current request; type org.apache.sling.api.SlingHttpServletRequest</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>allow access to the current response where you can add headers, cookies; type org.apache.sling.api.SlingHttpServletResponse</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can find more global objects on the adobe documentation about this at <a href="https://docs.adobe.com/content/help/en/experience-manager-htl/using/htl/global-objects.html">AEM Global Objects</a>.</p>
+
+<p><strong>Block Statements</strong></p>
+
+<p>The most used statements are:</p>
+
+<h5 id="1-data-sly-use---initializes-a-helper-object-and-expose-it-through-a-variable-below-you-can-see-example-of-usages">1. data-sly-use - initializes a helper object and expose it through a variable. Below you can see example of usages.</h5>
+
+<ul>
+  <li>initialize a javascript object which is in the same directory with the template file</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-use.head="head.js"&gt;${head.title}&lt;/div&gt;
+&lt;div data-sly-use.head="${'head.js' @param='test'}"&gt;${head.title}&lt;/div&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>initialize a Java object which is in the same directory with the template file</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-use.head="Head"&gt;${head.title}&lt;/div&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>initialize a Java object which is in not in the same directory with the template file</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-use.head="org.example.mypackage.Head"&gt;${head.title}&lt;/div&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>initialize another HTL template</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-use.header="headerTemplate.html" data-sly-call="${header.simple}"&gt;&lt;/div&gt;
+</code></pre></div></div>
+
+<h5 id="2-data-sly-unwrap---removes-the-host-element">2. data-sly-unwrap - removes the host element.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p data-sly-unwrap&gt;Hello there!&lt;/p&gt;
+</code></pre></div></div>
+
+<p>The result of the expression above is : Hello there! without any html tag.</p>
+
+<h5 id="3-data-sly-attribute---add-attributes-to-the-host-element">3. data-sly-attribute - add attributes to the host element.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p data-sly-attribute.id="test"&gt;Hello there!&lt;/p&gt;
+</code></pre></div></div>
+
+<p>The result of the expression above is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p id="test"&gt;Hello there!&lt;/p&gt;
+</code></pre></div></div>
+
+<h5 id="4-data-sly-test---conditional-expression-if-the-condition-is-true-then-the-host-element-is-displayed-otherwise-is-removed">4. data-sly-test - conditional expression if the condition is true then the host element is displayed otherwise is removed.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-test.cond="${flag1 &amp;&amp; flag2}"&gt;When flag1 and flag2 are true I am displayed!&lt;/div&gt;
+</code></pre></div></div>
+
+<h5 id="5-data-sly-list---repeats-the-host-element-for-every-element-from-the-enumerable">5. data-sly-list - repeats the host element for every element from the enumerable.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+&lt;li data-sly-list.child="${resource.listChildren}"&gt;
+    &lt;span&gt;index: ${childList.index}&lt;/span&gt;
+    &lt;span&gt;value: ${child.title}&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></div></div>
+
+<p>Inside the list using the childList you also have access to the following properties:</p>
+
+<ul>
+  <li>count - one based counter (1…length)</li>
+  <li>first - true if the current element is the first one</li>
+  <li>middle - true if the current element is not the first or the last</li>
+  <li>last - true if the current element is the last</li>
+  <li>odd - true if the index is odd</li>
+  <li>even - true if the index is even</li>
+</ul>
+
+<h5 id="6-data-sly-resource---includes-the-result-of-rendering-the-indicating-resource">6. data-sly-resource - includes the result of rendering the indicating resource.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-resource="path/to/resource"&gt;&lt;/div&gt;
+&lt;div data-sly-resource="${resource.path}"&gt;&lt;/div&gt;
+&lt;div data-sly-resource="${'test' @ resourceType='my/resource/type'}"&gt;&lt;/div&gt;
+</code></pre></div></div>
+
+<h5 id="7-data-sly-include---replaces-the-content-of-the-host-element-with-the-markup-generated-by-the-htl-file-which-is-included">7. data-sly-include - replaces the content of the host element with the markup generated by the HTL file which is included.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div data-sly-include="path/to/template.html"&gt;&lt;/div&gt;
+</code></pre></div></div>
+
+<h5 id="8-data-sly-template---defines-a-template">8. data-sly-template - defines a template.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template data-sly-template.test="${ @ text}"&gt;&lt;h2&gt;${text}&lt;/h2&gt;&lt;/div&gt;
+</code></pre></div></div>
+
+<h5 id="9-data-sly-call---calls-a-template-defined-by-the-data-sly-template">9. data-sly-call - calls a template defined by the data-sly-template.</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;template data-sly-template.test="${ @ text}"&gt;&lt;h2&gt;${text}&lt;/h2&gt;&lt;/div&gt;
+&lt;div data-sly-call="${test @ text='testText'}"&gt;&lt;/div&gt;
+</code></pre></div></div>
+
+<p><strong>Expression Language</strong></p>
+
+<p>The HTL uses an expression language to access the data structure. This expressions are delimited by ${ and }.
+The expression syntax contains variables, operators, literals and options. In the AEM documentation you can fin much more about this just folow the link <a href="https://docs.adobe.com/content/help/en/experience-manager-htl/using/htl/expression-language.html">AEM Expression Language</a>.</p>
+
+<p>This is the summary about the HTL if you follow the links that I provide it you will find much more. Thank you  for reading this if you like it please feel free to share it. If you have any suggestion I am open to it.</p>]]></content><author><name></name></author><category term="AEM" /><category term="HTL" /><category term="AEM" /><summary type="html"><![CDATA[Today I am going to write about HTL. HTL comes from HTML Template Language and is the recommended server-side template system for the HTML in AEM. This was introduced to take place of the JSP (JavaServer Pages) which was used in the previous versions of AEM.]]></summary></entry><entry xml:lang="en"><title type="html">Convert @SlingServlet to @Component</title><link href="https://andreea88.github.io/aem/2019/09/22/Convert-SlingServlet-example.html" rel="alternate" type="text/html" title="Convert @SlingServlet to @Component" /><published>2019-09-22T00:00:00+02:00</published><updated>2019-09-22T00:00:00+02:00</updated><id>https://andreea88.github.io/aem/2019/09/22/Convert-SlingServlet-example</id><content type="html" xml:base="https://andreea88.github.io/aem/2019/09/22/Convert-SlingServlet-example.html"><![CDATA[<p>Last problem that I had to work was actually to convert all the apache felix annotation to the new R6 OSGI annotation. Anybody who is working in an AEM project knows that once you update your project to run with the AEM 6.4 server you have to update the annotation of all your services, servlets, components to the R6 OSGI.</p>
+
+<p>In this post I will explain how this can be done for the servlets with examples.</p>
+
+<h2 id="code-highlighting-examples">Code highlighting examples</h2>
+
+<p>A simple servlet which is using the @SlingServlet looks like this:</p>
+
+<h3 id="java">Java</h3>
+
+<p>java example</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@SlingServlet</span><span class="o">(</span>
+    <span class="n">paths</span> <span class="o">=</span> <span class="o">{</span><span class="s">"/pathtest/content"</span><span class="o">},</span>
+    <span class="n">methods</span> <span class="o">=</span> <span class="o">{</span><span class="s">"GET"</span><span class="o">,</span> <span class="s">"PUT"</span><span class="o">},</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">"com.servlet.TestServlet"</span>
+<span class="o">)</span>
+<span class="nd">@Properties</span><span class="o">({</span>
+       <span class="nd">@Property</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="nc">Constants</span><span class="o">.</span><span class="na">SERVICE_VENDOR</span><span class="o">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">"Test Vendor"</span><span class="o">),</span>
+       <span class="nd">@Property</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="nc">Constants</span><span class="o">.</span><span class="na">SERVICE_DESCRIPTION</span><span class="o">,</span> <span class="n">value</span> <span class="o">=</span> <span class="s">"Test description"</span><span class="o">),</span>
+<span class="o">})</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestServlet</span> <span class="kd">extends</span> <span class="nc">SlingAllMethodsServlet</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+        <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">SlingHttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="nc">SlingHttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+          <span class="n">responseHTML</span> <span class="o">=</span> <span class="s">"&lt;div&gt;This is a test Servlet&lt;/div&gt;"</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html"</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="n">responseHTML</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>If we are converting the servlet above the we get the following result:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Component</span><span class="o">(</span>
+    <span class="n">immediate</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span>
+    <span class="n">service</span> <span class="o">={</span><span class="nc">Servlet</span><span class="o">.</span><span class="na">class</span><span class="o">},</span>
+    <span class="n">property</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="s">"sling.servlet.paths=/pathtest/content"</span><span class="o">,</span>
+        <span class="s">"sling.servlet.methods=get"</span><span class="o">,</span>
+        <span class="s">"sling.servlet.methods=put"</span><span class="o">,</span>
+        <span class="s">"sling.core.servletName=com.servlet.TestServlet"</span><span class="o">,</span>
+        <span class="nc">Constants</span><span class="o">.</span><span class="na">SERVICE_VENDOR</span><span class="o">+</span><span class="s">"=Test Vendor"</span><span class="o">,</span>
+        <span class="nc">Constants</span><span class="o">.</span><span class="na">SERVICE_DESCRIPTION</span><span class="o">+</span><span class="s">"=Test description"</span>
+    <span class="o">}</span>
+<span class="o">)</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestServlet</span> <span class="kd">extends</span> <span class="nc">SlingAllMethodsServlet</span> <span class="o">{</span>
+
+ <span class="nd">@Override</span>
+        <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">SlingHttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="nc">SlingHttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+          <span class="n">responseHTML</span> <span class="o">=</span> <span class="s">"&lt;div&gt;This is a test Servlet&lt;/div&gt;"</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html"</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+          <span class="n">response</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">write</span><span class="o">(</span><span class="n">responseHTML</span><span class="o">);</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Comparing the two portions of code we see immediate that before we were using the @SlingServlet annotation but now we use the @Component annotation and we referrer to servlet using the attribute “service ={Servlet.class}”. A second part that change is the property paths and methods are now replace as following:</p>
+
+<ul>
+  <li>paths = {“/pathtest/content”} is replaced by “sling.servlet.paths=/pathtest/content”</li>
+  <li>methods = {“GET”, “PUT”} are replaced by the properties “sling.servlet.methods=get” and “sling.servlet.methods=put”</li>
+  <li>name = “com.servlet.TestServlet” is replaced by the “sling.core.servletName=com.servlet.TestServlet”</li>
+</ul>
+
+<p>Pretty much this is it. It is not too complicated. What is really helpful is the Sling Apache documentation about servlets you can find it <a href="https://sling.apache.org/documentation/the-sling-engine/servlets.html"> here </a>.</p>]]></content><author><name></name></author><category term="AEM" /><category term="AEM6.4" /><category term="OSGI" /><category term="SlingServlet" /><category term="Component" /><category term="Migration" /><summary type="html"><![CDATA[Last problem that I had to work was actually to convert all the apache felix annotation to the new R6 OSGI annotation. Anybody who is working in an AEM project knows that once you update your project to run with the AEM 6.4 server you have to update the annotation of all your services, servlets, components to the R6 OSGI.]]></summary></entry></feed>
