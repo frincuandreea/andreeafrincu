@@ -117,12 +117,13 @@
 
     }
     .post-teaser{
-      flex: 0 0 50%;
-      max-width: 45%;
+/*      flex: 0 0 50%;
+      max-width: 45%;*/
       margin-bottom: 3rem;
       padding: 0px 0px 0px;
       padding-left: 15px;
       padding-right: 15px;
+      padding: 0% 8%;
       @media screen and (max-width: $break) {
         flex: 0 0 95%;
         max-width: 95%;
