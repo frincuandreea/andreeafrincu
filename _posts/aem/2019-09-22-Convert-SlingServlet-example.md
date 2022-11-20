@@ -1,4 +1,4 @@
-`---`
+---
 title: Convert @SlingServlet to @Component
 github_comments_issueid: 1
 layout: post
