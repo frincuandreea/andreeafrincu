@@ -3,11 +3,16 @@
     <!-- Logo and title -->
 	<div class="branding">
         {% if site.avatar %}
-		<a href="{{ '/' | relative_url }}">
+        {% if site.lang =="en" %}
+        {% capture link %}{{ '/' | relative_url  }}{% endcapture %}
+        {% else %}
+        {% capture link %}/{{site.lang}}{{ '/' | relative_url }}{% endcapture %}
+        {% endif %}
+		<a href="{{link}}">
 			<img alt="logo img" class="avatar" src="{{ site.avatar | relative_url }}" />
 		</a>
         {% endif %}
-        <a class="site-title" aria-label="{{ site.title }}" href="{{ '/' | relative_url }}">
+        <a class="site-title" aria-label="{{ site.title }}" href="{{link}}">
         {{ site.title }}
 		</a>
 	</div>
@@ -17,27 +22,50 @@
     <a aria-label="pull" id="pull" class="toggle" href="#">
     <i class="fa fa-bars fa-lg"></i>
     </a>
+        <ul class="hide">
+        {% for lang in site.languages %}
+        {% if forloop.index0 == 0 %}
+        <li><a href="{{ site.baseurl_root }}{{ page.url }}"
+              {% if site.lang == lang %} class="active"{% endif %} >{{ lang }}</a></li>
 
+        {% else %}
+            <li> |<a href="/{{ lang }}{{ page.url }}"
+                     {% if site.lang == lang %} class="active"{% endif %} >{{ lang }}</a></li>
+        {% endif %}
+        {% endfor %}
+        </ul>
     <!-- Menu -->
     <ul class="hide">
         {% assign name_page = "" %}
         <li>
-            <a class="clear" aria-label="home" title="home}" href="{{  '/' | relative_url  }}">Home</a>
+            {% if site.lang =="en" %}
+            {% capture defaultLink %}{{ '/' | relative_url  }}{% endcapture %}
+            <a class="clear" aria-label="home" title="home}" href="{{defaultLink}}">{{site.translations[site.lang].home}}</a>
+            {% else %}
+            <a class="clear" aria-label="home" title="home}" href="/{{site.lang}}{{ '/' | relative_url  }}">{{site.translations[site.lang].home}}</a>
+            {% endif%}
         </li>
         <li class="separator"> | </li>
         {% for page in site.pages %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
             <li class="separator"> | </li>
             <li>
-                <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
+                {% if site.lang =="en" %}
+                {% capture link %}{{page.url | relative_url }}{% endcapture %}
+                {% else %}
+                {% capture link %}/{{site.lang}}{{page.url | relative_url }}{% endcapture %}
+                {% endif %}
+                <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{link}}">
                     {% if page.icon %} <i class="fa {{ page.icon }}" aria-hidden="true"></i>
-                    {% else %} {{ page.title }} {% endif%}
+                    {% else %} {% translate page.title %}
+                    {% endif%}
                 </a>
             </li>
             {% endunless %}
             {% assign name_page = page.title | append: name_page %}
         {% endfor %}
     </ul>
+
 
 	</nav>
 </header>

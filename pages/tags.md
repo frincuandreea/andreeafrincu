@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: Tags
+title: tags
 permalink: /tags/
 icon: "fa-tags"
 hide: true

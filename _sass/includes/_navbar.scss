@@ -86,6 +86,9 @@ nav {
       }
 
     }
+    &.active{
+     color: $link-color;
+        }
 
   }
 }

@@ -1,12 +1,24 @@
 ---
 layout: default
 ---
-
+{% unless page.lang %}
+<script type="text/javascript">
+    $( document ).ready(function(){
+        var userLang = navigator.language || navigator.userLanguage;
+        if ((userLang == "ro") || (userLang == "ro-RO")) {
+            window.location.href = "{{ site.url }}/ro/"
+        }
+        else {
+            window.location.href = "{{ site.url }}/en/"
+        }
+    });
+</script>
+{% endunless %}
 <div class="home">
 
     <div id="main" class="call-out"
          style="background-image: url('{{ site.header_feature_image | relative_url }}')">
-        <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
+        <h1>{{site.translations[site.lang].header_text}} </h1>
     </div>
 
     {% include blog.html %}
