@@ -1,11 +1,11 @@
 <ul class="category-filter">
     <li class="category selected-filter" id="All" onclick="filterUsingCategory('All')">
-        {% translate all %}
+        {{site.data[page.lang].all}}
     </li>
-    {% assign categories = site.categories | sort %}
+    {% assign categories = site.categories  | sort %}
     {% for category in categories %}
     {% assign cat = category | first %}
-    {% if cat != 'content' %}
+    {% if cat != 'en' %}
     <li class="category" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
         {{ cat }}
     </li>
@@ -15,7 +15,8 @@
 
 <div class="posts">
     {% assign id = 0 %}
-    {% for post in paginator.posts %}
+    {% assign posts = paginator.posts %}
+    {% for post in posts %}
     {% assign id = id | plus:1 %}
     <div class="post-teaser" id="{{id}}">
         <div class="card">
