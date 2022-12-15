@@ -2,10 +2,10 @@
     <!-- Logo and title -->
 	<div class="branding">
         {% if site.avatar %}
-        {% if page.lang =="en" %}
+        {% if page.lang == "en" %}
         {% capture link %}{{ '/' | relative_url  }}{% endcapture %}
         {% else %}
-        {% capture link %}/ro{{ '/' | relative_url }}{% endcapture %}
+        {% capture link %}{{ '/ro' | relative_url }}{% endcapture %}
         {% endif %}
 		<a href="{{link}}">
 			<img alt="logo img" class="avatar" src="{{ site.avatar | relative_url }}" />
@@ -26,11 +26,15 @@
 
     <ul class="hide">
         {% assign name_page = "" %}
+
+        <li><a aria-label="en" title="en" href="{{ '/' | relative_url  }}">EN</a> | <a aria-label="ro" title="ro" href="{{ '/' | relative_url  }}/ro">RO</a></li>
+        <li></li>
+        <li class="separator"> | </li>
         <li>
             {% if page.lang == "en" %}
             {% capture link %}{{ '/' | relative_url  }}{% endcapture %}
             {% else %}
-            {% capture link %}/{{page.lang}}{{ '/' | relative_url  }}{% endcapture %}
+            {% capture link %}{{ '/' | relative_url  }}{{page.lang}}{% endcapture %}
             {% endif%}
             <a class="clear" aria-label="home" title="home" href="{{link}}">{{site.data[page.lang].home}}</a>
         </li>

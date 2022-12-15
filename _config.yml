@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/andreeafrincu"
+baseurl: "/andreeafrincu/"
 url: "https://andreea88.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
@@ -25,12 +25,12 @@ katex: true                                             # Enable if using math m
 google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
 cookie_consent: false                                   # To respect the usage of cookies
 disqus_shortname:                                       # Your discus shortname for comments
-languages: ["en", "ro"]
+lang: ["en", "ro"]
 exclude_from_localizations: ["assets"]
 github_comments_repository: frincuandreea/blogcomments
 # PAGINATION
 paginate: 5
-paginate_path: "/blog/page:num"
+paginate_path: /blog/page:num /ro/blog/page:num
 
 # PORTFOLIO
 collections:

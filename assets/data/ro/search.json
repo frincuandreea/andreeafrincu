@@ -1,7 +1,8 @@
 ---
 ---
 [
-  {% for post in site.posts %}
+  {% assign posts=site.posts | where:"lang", "ro" %}
+  {% for post in posts %}
   {
     "title"    : "{{ post.title | strip_newlines | escape }}",
     "category" : "{{ post.category }}",

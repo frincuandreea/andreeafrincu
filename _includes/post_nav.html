@@ -1,19 +1,36 @@
 <div id="post-nav">
-    {% if page.next.url %}
     <div id="previous-post">
-        <a alt="{{ page.next.title }}" href="{{ page.next.url | relative_url }}">
-            <p>{{ site.data.language.str_previous_post | default: "Previous post" }}</p>
-            {{ page.next.title }}
-        </a>
-    </div>
+    {% for post in site.posts %}
+    {% if post.lang == page.lang %}
+    {% if prev %}
+    <a alt="{{ post.title }}" href="{{ post.url | relative_url }}">
+        <p>{{ site.data[page.lang].str_previous_post | default: "Previous post" }}</p>
+        {{ post.title }}
+    </a>
     {% endif %}
+    {% assign prev = false %}
+    {% if post.id == page.id %}
+    {% assign prev = true %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    </div>
 
-    {% if page.previous.url %}
     <div id="next-post">
-        <a alt="{{ page.previous.title }}" href="{{ page.previous.url | relative_url }}">
-            <p>{{ site.data.language.str_next_post | default: "Next post"}}</p>
-            {{ page.previous.title }}
-        </a>
-    </div>
+    {% for post in site.posts reversed %}
+    {% if post.lang == page.lang %}
+    {% if next %}
+    <a alt="{{ post.title }}" href="{{ post.url | relative_url }}">
+        <p>{{site.data[page.lang].str_next_post | default: "Next post"}}</p>
+        {{ post.title }}
+    </a>
+    {% break %}
     {% endif %}
+    {% assign next = false %}
+    {% if post.id == page.id %}
+    {% assign next = true %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    </div>
 </div>

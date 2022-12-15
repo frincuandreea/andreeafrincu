@@ -2,10 +2,14 @@
     <li class="category selected-filter" id="All" onclick="filterUsingCategory('All')">
         {{site.data[page.lang].all}}
     </li>
-    {% assign categories = site.categories  | sort %}
+    {% assign posts=site.posts | where:"lang", page.lang %}
+    {% assign categories = site.categories %}
     {% for category in categories %}
     {% assign cat = category | first %}
-    {% if cat != 'en' %}
+    {% assign posts=site.posts | where:"lang", page.lang | where:"categories", cat %}
+    {% assign sizePosts = posts | size %}
+
+    {% if sizePosts > 0  and cat != "ro" %}
     <li class="category" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
         {{ cat }}
     </li>
@@ -15,10 +19,11 @@
 
 <div class="posts">
     {% assign id = 0 %}
-    {% assign posts = paginator.posts %}
+    {% assign posts=site.posts | where:"lang", page.lang %}
+    {% assign sizePosts = posts | size %}
     {% for post in posts %}
     {% assign id = id | plus:1 %}
-    <div class="post-teaser" id="{{id}}">
+    <div class="post-teaser" id="{{id}}" data-lang="{{post.lang}}">
         <div class="card">
             <div class="card-body">
                 {% if post.thumbnail %}
@@ -50,13 +55,21 @@
                 <div>
                     {% assign postCats = post.categories | sort %}
                     {% for cat in postCats %}
+                    {% if cat != "ro" %}
                     <span class="badge">{{ cat }}</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+
     {% endfor %}
+
+    {% if sizePosts == 0 %}
+    {{ site.data[page.lang].posts_will_come }}
+    {% endif %}
+
 </div>
 
 <script type="text/javascript">
@@ -70,9 +83,10 @@
         if(filter){
             filter.classList.add("selected-filter");
         }
-        {% for post in site.posts %}
+         {% assign posts=site.posts | where:"lang", page.lang %}
+        {% for post in posts %}
             var cats = {{ post.categories | jsonify }}
-
+            console.log("cats", cats);
         var postDiv = document.getElementById(++id);
         postDiv.style.display =
                 (selectedCategory == 'All' || cats.includes(selectedCategory))
