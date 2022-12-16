@@ -25,7 +25,6 @@ katex: true                                             # Enable if using math m
 google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
 cookie_consent: false                                   # To respect the usage of cookies
 disqus_shortname:                                       # Your discus shortname for comments
-lang: ["en", "ro"]
 exclude_from_localizations: ["assets"]
 github_comments_repository: frincuandreea/blogcomments
 # PAGINATION
