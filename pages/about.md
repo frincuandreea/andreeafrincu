@@ -10,7 +10,7 @@ Hello,
 
 my name is Andreea-Oana (Frincu) Ciapsa.                                      
 
-![](/andreeafrincu/assets/img/author/me.jpg) 
+![](/assets/img/author/me.jpg) 
 
 I am a Software Developer since 2010. 
 
