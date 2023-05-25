@@ -6,7 +6,7 @@ layout: default
     $( document ).ready(function(){
         var userLang = navigator.language || navigator.userLanguage;
         if ((userLang == "ro") || (userLang == "ro-RO")) {
-            window.location.href = "{{ site.url }}/ro/"
+            window.location.href = "/ro/"
         }
         else {
             window.location.href = "{{ site.url }}/"

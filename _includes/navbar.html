@@ -27,7 +27,7 @@
     <ul class="hide">
         {% assign name_page = "" %}
 
-        <li><a aria-label="en" title="en" href="{{ '/' | relative_url  }}">EN</a> | <a aria-label="ro" title="ro" href="{{ '/' | relative_url  }}/ro">RO</a></li>
+        <!--<li><a aria-label="en" title="en" href="{{ '/' | relative_url  }}">EN</a> | <a aria-label="ro" title="ro" href="{{ '/' | relative_url  }}/ro">RO</a></li>
         <li></li>
         <li class="separator"> | </li>
         <li>
@@ -36,9 +36,11 @@
             {% else %}
             {% capture link %}{{ '/' | relative_url  }}{{page.lang}}{% endcapture %}
             {% endif%}
+        </li>
+       -->
+        <li>
             <a class="clear" aria-label="home" title="home" href="{{link}}">{{site.data[page.lang].home}}</a>
         </li>
-        <li class="separator"> | </li>
         {% assign pages=site.pages | where:"lang", page.lang %}
         {% for page in pages %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
