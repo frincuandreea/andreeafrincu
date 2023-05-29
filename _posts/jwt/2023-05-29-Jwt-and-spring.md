@@ -5,13 +5,11 @@ tags:
 - Java
 - Spring
 - JWT
-
+lang: en
+ref: jwtspring
 categories:
 - JWT
-
 ---
-
-### What is JWT token?
 
 JWT token is a standard which allows us to transfer JSON objects between applications securely. 
 It is no a way to encrypt the information in order to prevent steeling it. Anybody can decrypt your token if it has it. You can try to decrypt the token at [jwt.io](https://jwt.io). We can usually use the JWT token in an authorization process or for exchanging information between applications. 
