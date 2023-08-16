@@ -5,7 +5,7 @@ layout: post
 tags:
 - HTL
 - AEM
-comments: true
+comments: false
 lang: en
 ref: sightlyhtl
 categories:
