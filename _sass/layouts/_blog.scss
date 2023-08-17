@@ -17,14 +17,6 @@
      height: 500px;
   }
 
-  @media screen and (max-width: $break) {
-    background-size: 200% auto;
-  }
-
-  @media screen and (max-width: $sm-break) {
-    background-size: 400% auto;
-  }
-
   //For white images
   p,
   a,
@@ -55,6 +47,7 @@
      padding: 3%;
 @media (min-width: $l-break) {
  grid-template-columns: 1fr 1fr;
+  padding: 5%;
 }
   .post-teaser {
     @extend %padding-post;
@@ -122,8 +115,8 @@
       max-width: 45%;*/
       padding: 15px 15px 15px 15px;
       @media screen and (max-width: $break) {
-        flex: 0 0 95%;
-        max-width: 95%;
+       padding: 0%;
+        max-width: 100%;
       }
 
       .card{

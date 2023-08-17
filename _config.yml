@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "/"
-url: "https://andreea88.github.io"
+url: "https://frincuandreea.com"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Andreea Frincu                                    # site's title
@@ -29,7 +29,7 @@ exclude_from_localizations: ["assets"]
 github_comments_repository: frincuandreea/blogcomments
 # PAGINATION
 paginate: 5
-paginate_path: /blog/page:num /ro/blog/page:num
+paginate_path: /blog/page:num
 
 # PORTFOLIO
 collections:
