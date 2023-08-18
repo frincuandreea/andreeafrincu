@@ -19,7 +19,7 @@
 
 <div class="posts">
     {% assign id = 0 %}
-    {% assign posts=site.posts | where:"lang", page.lang %}
+    {% assign posts=paginator.posts | where:"lang", page.lang %}
     {% assign sizePosts = posts | size %}
     {% for post in posts %}
     {% assign id = id | plus:1 %}
