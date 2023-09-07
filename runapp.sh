@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-jekyll serve
+jekyll serve --drafts
 jekyll build --trace
