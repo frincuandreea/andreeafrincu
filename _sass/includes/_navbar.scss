@@ -19,6 +19,8 @@
   display: inline-block;
   float: left;
   width: 100%;
+  position: fixed;
+  z-index: 90px;
 
   .separator {
     user-select: none;
