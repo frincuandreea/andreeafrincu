@@ -52,14 +52,11 @@
     {% endif %}
 
     <!-- seo tags -->
-    <meta property="og:image" content="{{ '/' | absolute_url }}{% if page.thumbnail %}{{ page.thumbnail }}{% else %}{{ page.feature-img | default: site.header_feature_image }}{% endif %}">
+    <meta property="og:image" content="/assets/img/author/imgeu.JPG">
     {% unless page.layout == post %}
     <meta property="og:type" content="website" />
     {% endunless %}
     {% seo %}
-
-    <!-- RSS -->
-    {% feed_meta %}
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="{{ page.title | default: site.title }}">

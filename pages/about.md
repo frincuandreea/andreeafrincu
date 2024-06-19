@@ -10,7 +10,7 @@ Hello,
 
 my name is Andreea-Oana (Frincu) Ciapsa. I work as a Software Developer, in my free time I like to code, read books, walk and help others.                                     
 
-![](/assets/img/author/me.jpg) 
+![](/assets/img/author/imgeu.JPG) 
 
 
 **Skills:**

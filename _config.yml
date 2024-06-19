@@ -4,7 +4,7 @@ url: "https://frincuandreea.com"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Andreea Frincu                                    # site's title
-description: "Andreea Frincu blog posts about aem, java, javascript and so on."      # used by search engines
+description: "Andreea Frincu blog posts about aem, java, javascript, css and much more."      # used by search engines
 avatar: assets/img/mylogo.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
