@@ -6,14 +6,19 @@ feature-img: "assets/img/pexels/book-coffee.webp"
 lang: en
 ---
 
+![](/assets/img/author/imgeu.JPG)
+
 Hello,
 
-my name is Andreea Frincu (now Ciapsa). I work as a Software Developer in various projects. During the years I worked on backend projects but also on frontend projects.
+my name is Andreea Frincu. I started this blog to write about topics software development. I just want to 
+share with everybody interesting implementations tasks that maybe you also have to do them. My purpose is to write about topics which are interesting or they are repeating every time.
+
+I work as a Software Developer in various projects. During the years I worked on backend projects but also on frontend projects.
 I learn a lot during working with awesome teams and I am still open to learn new things. 
 
-In my free time I like to code, read books, walk and help others.                                     
+In my free time I like to code new small projects or try ideas, read books, walk and help others.                                     
 
-![](/assets/img/author/imgeu.JPG) 
+
 
 
 **Technical Skills:**
