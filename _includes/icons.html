@@ -12,7 +12,7 @@
 
 {% if site.data.social.email_address or site.theme_settings.email_address %}
 <li>
-    <a href="mailto:{{ site.data.social.email_address }}" title="{{ site.data.language.str_email }}">
+    <a href="mailto:{{ site.data.social.email_address }}" title="{{ site.data.language.str_email }}" aria-label="Contact me on mail {{ site.data.social.email_address }}">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -36,7 +36,8 @@
 {% if site.data.social.bitbucket or site.theme_settings.bitbucket %}
 <li>
     <a href="https://bitbucket.org/{{ site.data.social.bitbucket }}"
-       title="{{ site.data.language.str_follow_on }} Bitbucket">
+       title="{{ site.data.language.str_follow_on }} Bitbucket"
+    aria-label="Contact me on bitbucket">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-bitbucket fa-stack-1x fa-inverse"></i>
@@ -83,7 +84,9 @@
 
 {% if site.data.social.github or site.theme_settings.github %}
 <li>
-    <a href="https://github.com/{{ site.data.social.github }}" title="{{ site.data.language.str_follow_on }} GitHub">
+    <a href="https://github.com/{{ site.data.social.github }}"
+       title="{{ site.data.language.str_follow_on }} GitHub"
+       aria-label="Contact me on Github">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -117,7 +120,9 @@
 
 {% if site.data.social.linkedin or site.theme_settings.linkedin %}
 <li>
-    <a href="{{ site.data.social.linkedin }}" title="{{ site.data.language.str_follow_on }} LinkedIn">
+    <a href="{{ site.data.social.linkedin }}"
+       title="{{ site.data.language.str_follow_on }} LinkedIn"
+    aria-label="Contact me on LinkedIn">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>

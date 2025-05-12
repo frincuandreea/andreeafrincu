@@ -12,7 +12,35 @@
     display: table;
   }
 }
-
+.skipToContent{
+        position: absolute;
+        left: -999px;
+        top: 0;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        white-space: nowrap;
+}
+.skipToContent:focus, .skipToContent:active {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 12px 24px;
+        background-color: #0262B1;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        outline-offset: 2px;
+        z-index: 1000;
+        visibility: visible;
+        outline: solid 4px #0262B1;
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 3.5rem;
+        border: solid 2px transparent;
+    }
 .site-header {
   padding: 2% 2% 1% 2%;
   background: $brand-color;

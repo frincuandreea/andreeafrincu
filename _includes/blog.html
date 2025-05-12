@@ -1,6 +1,6 @@
-<ul class="category-filter">
+<ul class="category-filter" aria-label="Filter posts by categories">
     <li class="category selected-filter" id="All" onclick="filterUsingCategory('All')">
-        {{site.data[page.lang].all}}
+       <a href="#all">{{site.data[page.lang].all}}</a>
     </li>
     {% assign posts=site.posts | where:"lang", page.lang %}
     {% assign categories = site.categories %}
@@ -11,7 +11,7 @@
 
     {% if sizePosts > 0  and cat != "ro" %}
     <li class="category" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
-        {{ cat }}
+        <a href="#{{this.id}}" >{{ cat }}</a>
     </li>
     {% endif %}
     {% endfor %}

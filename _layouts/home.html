@@ -1,19 +1,6 @@
 ---
 layout: default
 ---
-{% unless page.lang %}
-<script type="text/javascript">
-    $( document ).ready(function(){
-        var userLang = navigator.language || navigator.userLanguage;
-        if ((userLang == "ro") || (userLang == "ro-RO")) {
-            window.location.href = "/ro/"
-        }
-        else {
-            window.location.href = "{{ site.url }}/"
-        }
-    });
-</script>
-{% endunless %}
 <div class="home">
 
     <div id="main" class="call-out"
