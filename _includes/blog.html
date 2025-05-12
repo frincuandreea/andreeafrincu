@@ -1,6 +1,6 @@
 <ul class="category-filter" aria-label="Filter posts by categories">
     <li class="category selected-filter" id="All" onclick="filterUsingCategory('All')">
-       <button>{{site.data[page.lang].all}}</button>
+        <button>{{site.data[page.lang].all}}</button>
     </li>
     {% assign posts=site.posts | where:"lang", page.lang %}
     {% assign categories = site.categories %}
@@ -9,7 +9,7 @@
     {% assign posts=site.posts | where:"lang", page.lang | where:"categories", cat %}
     {% assign sizePosts = posts | size %}
 
-    {% if sizePosts > 0  and cat != "ro" %}
+    {% if sizePosts > 0 and cat != "ro" %}
     <li class="category" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
         <button>{{ cat }}</button>
     </li>
@@ -24,33 +24,26 @@
     {% for post in posts %}
     {% assign id = id | plus:1 %}
     <div class="post-teaser" id="{{id}}" data-lang="{{post.lang}}">
-        <div class="card">
+        <a class="card" aria-label="{{ post.title }}" href="{{ post.url | relative_url }}">
             <div class="card-body">
                 {% if post.thumbnail %}
                 <div class="post-img">
-                    <a aria-label="{{ post.title }}" href="{{ post.url | relative_url }}">
-                        <img alt="{{ post.title }}" src="{{ post.thumbnail | relative_url }}">
-                    </a>
+                    <img alt="{{ post.title }}" src="{{ post.thumbnail | relative_url }}">
                 </div>
                 {% endif %}
-        <span>
-              <h2>
-                  <a aria-label="{{ post.title }}" class="post-link" href="{{ post.url | relative_url }}">
-                      {{ post.title }}
-                  </a>
-              </h2>
-              {% include post_info.html author=post.author date=post.date %}
-              {% if site.excerpt or site.theme_settings.excerpt %}
-              <div class="excerpt">
+                <span>
+                  <h2> {{ post.title }}</h2>
+                {% include post_info.html author=post.author date=post.date %}
+                {% if site.excerpt or site.theme_settings.excerpt %}
+                <div class="excerpt">
                   {% if site.excerpt == "truncate" %}
                   {{ post.content | strip_html | truncate: '150' | escape }}
                   {% else %}
                   {{ post.excerpt | strip_html | escape }}
                   {% endif %}
-                   <a aria-label="{{ post.title }}" href="{{ post.url | relative_url }}">[Read more...]</a>
               </div>
-          {% endif %}
-      </span>
+                {% endif %}
+                </span>
                 <div>
                     {% assign postCats = post.categories | sort %}
                     {% for cat in postCats %}
@@ -60,7 +53,7 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 
     {% endfor %}
