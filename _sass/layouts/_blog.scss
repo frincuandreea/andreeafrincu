@@ -166,7 +166,12 @@
       text-transform: uppercase;
     }
   }
-  .selected-filter a {
+  button{
+         background: white;
+         border: none;
+         color: #337ab7;
+      }
+  .selected-filter button {
       color: black;
   }
 }

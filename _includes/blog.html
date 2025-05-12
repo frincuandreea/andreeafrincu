@@ -1,6 +1,6 @@
 <ul class="category-filter" aria-label="Filter posts by categories">
     <li class="category selected-filter" id="All" onclick="filterUsingCategory('All')">
-       <a href="#all">{{site.data[page.lang].all}}</a>
+       <button>{{site.data[page.lang].all}}</button>
     </li>
     {% assign posts=site.posts | where:"lang", page.lang %}
     {% assign categories = site.categories %}
@@ -11,7 +11,7 @@
 
     {% if sizePosts > 0  and cat != "ro" %}
     <li class="category" id="{{ cat }}" onclick="filterUsingCategory(this.id)">
-        <a href="#{{this.id}}" >{{ cat }}</a>
+        <button>{{ cat }}</button>
     </li>
     {% endif %}
     {% endfor %}
@@ -34,14 +34,12 @@
                 </div>
                 {% endif %}
         <span>
-          <header>
-              <h4>
+              <h2>
                   <a aria-label="{{ post.title }}" class="post-link" href="{{ post.url | relative_url }}">
                       {{ post.title }}
                   </a>
-              </h4>
+              </h2>
               {% include post_info.html author=post.author date=post.date %}
-          </header>
           {% if site.excerpt or site.theme_settings.excerpt %}
               <div class="excerpt">
                   {% if site.excerpt == "truncate" %}

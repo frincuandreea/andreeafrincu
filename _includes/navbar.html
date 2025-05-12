@@ -8,13 +8,11 @@
         {% else %}
         {% capture link %}{{ '/ro' | relative_url }}{% endcapture %}
         {% endif %}
-		<a href="{{link}}">
+		<a href="{{link}}" class="site-title" aria-label="{{ site.title }}">
 			<img alt="logo img" class="avatar" src="{{ site.avatar | relative_url }}" />
+            {{ site.title }}
 		</a>
         {% endif %}
-        <a class="site-title" aria-label="{{ site.title }}" href="{{link}}">
-        {{ site.title }}
-		</a>
 	</div>
 
     <!-- Toggle menu -->
