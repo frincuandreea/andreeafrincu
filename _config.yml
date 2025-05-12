@@ -14,7 +14,7 @@ header_feature_image: assets/img/pexels/book-coffee.webp
 footer_text: andreeafrincu
 
 # Blog
-excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
+excerpt: truncate                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
 color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
@@ -28,7 +28,7 @@ disqus_shortname:                                       # Your discus shortname 
 exclude_from_localizations: ["assets"]
 github_comments_repository: frincuandreea/blogcomments
 # PAGINATION
-paginate: 5
+paginate: 6
 paginate_path: /blog/page:num
 
 # PORTFOLIO
