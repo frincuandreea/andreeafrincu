@@ -94,10 +94,9 @@ a {
  * Improve readability when focused and also mouse hovered in all browsers.
  */
 
-a:active,
-a:hover {
-  outline: 0;
-}
+*:focus-visible{
+  outline: solid 4px #0262B1;
+    }
 
 /* Text-level semantics
    ========================================================================== */
