@@ -58,6 +58,23 @@
     {% endunless %}
     {% seo %}
 
+
+    <!-- Personal identity: current and former professional name -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andreea Ciapsa",
+      "alternateName": "Andreea Frincu",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "jobTitle": "Senior Software Engineer & AEM Consultant",
+      "sameAs": [
+        "https://github.com/frincuandreea",
+        "https://www.linkedin.com/in/frincu-andreea-oana-71071930/"
+      ]
+    }
+    </script>
+
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="{{ page.title | default: site.title }}">
     <meta name="twitter:description" content="{{ page.content | strip_html | strip_newlines | truncate: 160 | default: site.header_text}}">
