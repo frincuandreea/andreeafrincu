@@ -1,61 +1,32 @@
-<header class="site-header">
-    <!-- Logo and title -->
-    <a class="skipToContent" href="#main">Skip to main content</a>
-	<div class="branding">
-        {% if site.avatar %}
-        {% if page.lang == "en" %}
-        {% capture link %}{{ '/' | relative_url  }}{% endcapture %}
-        {% else %}
-        {% capture link %}{{ '/ro' | relative_url }}{% endcapture %}
-        {% endif %}
-		<a href="{{link}}" class="site-title" aria-label="{{ site.title }}">
-			<img alt="logo img" class="avatar" src="{{ site.avatar | relative_url }}" />
-            {{ site.title }}
-		</a>
-        {% endif %}
-	</div>
-
-    <!-- Toggle menu -->
-    <nav class="clear">
-    <a aria-label="pull" id="pull" class="toggle" href="#">
-    <i class="fa fa-bars fa-lg"></i>
+<header class="portfolio-header">
+  <a class="skipToContent" href="#main">Skip to main content</a>
+  <div class="portfolio-container portfolio-header__inner">
+    <a class="portfolio-brand" href="{{ '/' | relative_url }}" aria-label="Andreea Frincu home">
+      <span class="portfolio-brand__name">Andreea Frincu</span>
+      <span class="portfolio-brand__role">Senior Software Engineer &amp; AEM Consultant</span>
     </a>
-
-    <!-- Menu -->
-
-    <ul class="hide">
-        {% assign name_page = "" %}
-
-        <!--<li><a aria-label="en" title="en" href="{{ '/' | relative_url  }}">EN</a> | <a aria-label="ro" title="ro" href="{{ '/' | relative_url  }}/ro">RO</a></li>
-        <li></li>
-        <li class="separator"> | </li>
-        <li>
-            {% if page.lang == "en" %}
-            {% capture link %}{{ '/' | relative_url  }}{% endcapture %}
-            {% else %}
-            {% capture link %}{{ '/' | relative_url  }}{{page.lang}}{% endcapture %}
-            {% endif%}
-        </li>
-       -->
-        <li>
-            <a class="clear" aria-label="home" title="home" href="{{link}}">{{site.data[page.lang].home}}</a>
-        </li>
-        {% assign pages=site.pages | where:"lang", page.lang %}
-        {% for page in pages %}
-            {% unless page.title == null or page.hide or name_page contains page.title %}
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{page.url | relative_url }}">
-                    {% if page.icon %} <i class="fa {{ page.icon }}" aria-hidden="true"></i>
-                    {% else %} {{site.data[page.lang][page.title]}}
-                    {% endif%}
-                </a>
-            </li>
-            {% endunless %}
-            {% assign name_page = page.title | append: name_page %}
-        {% endfor %}
-    </ul>
-
-
-	</nav>
+    <button class="portfolio-nav-toggle" type="button" aria-expanded="false" aria-controls="portfolio-navigation" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="portfolio-navigation" class="portfolio-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/services/' | relative_url }}">Services</a>
+      <a href="{{ '/blog/' | relative_url }}">Articles</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a class="portfolio-nav__cta" href="{{ '/contact/' | relative_url }}">Let's Work Together</a>
+    </nav>
+  </div>
 </header>
+<script>
+(function () {
+  var button = document.querySelector('.portfolio-nav-toggle');
+  var nav = document.getElementById('portfolio-navigation');
+  if (!button || !nav) return;
+  button.addEventListener('click', function () {
+    var open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('portfolio-nav--open', !open);
+  });
+})();
+</script>
