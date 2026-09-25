@@ -54,3 +54,44 @@
 .portfolio-button--light { flex:none; border-color:#fff; background:#fff; color:var(--pf-primary-dark)!important; }
 @media (max-width:1000px) { .portfolio-hero__grid,.portfolio-expertise { grid-template-columns:1fr; gap:48px; } .portfolio-hero__visual { justify-content:flex-start; } .portfolio-service-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:720px) { .portfolio-container { width:min(100% - 32px,1180px); } .portfolio-hero { padding:60px 0 52px; } .portfolio-hero h1 { font-size:clamp(2.4rem,12vw,3.6rem); } .portfolio-section { padding:64px 0; } .portfolio-service-grid,.portfolio-article-grid { grid-template-columns:1fr; } .portfolio-cta__inner { align-items:flex-start; flex-direction:column; } }
+
+/* Portfolio navigation and footer */
+.portfolio-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.96); border-bottom:1px solid #e7ebf2; backdrop-filter:blur(12px); }
+.portfolio-header__inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+.portfolio-brand { display:flex; flex-direction:column; text-decoration:none!important; line-height:1.2; }
+.portfolio-brand__name { color:#172033; font-size:1.02rem; font-weight:800; }
+.portfolio-brand__role { margin-top:4px; color:#657084; font-size:.68rem; font-weight:600; letter-spacing:.02em; }
+.portfolio-nav { display:flex; align-items:center; gap:27px; }
+.portfolio-nav>a { color:#3a4558!important; font-size:.84rem; font-weight:700; text-decoration:none!important; }
+.portfolio-nav>a:hover { color:#2456a6!important; }
+.portfolio-nav .portfolio-nav__cta { padding:10px 15px; border-radius:7px; background:#2456a6; color:#fff!important; }
+.portfolio-nav .portfolio-nav__cta:hover { background:#173d78; color:#fff!important; }
+.portfolio-nav-toggle { display:none; width:42px; height:42px; padding:9px; border:0; background:transparent; cursor:pointer; }
+.portfolio-nav-toggle span { display:block; height:2px; margin:5px 0; background:#172033; }
+.portfolio-footer { padding:68px 0 24px; background:#101a2d; color:#d6dfec; }
+.portfolio-footer__top { display:grid; grid-template-columns:1.2fr .8fr; gap:80px; padding-bottom:48px; }
+.portfolio-footer__intro { max-width:470px; }
+.portfolio-footer__brand { color:#fff!important; font-size:1.25rem; font-weight:800; text-decoration:none!important; }
+.portfolio-footer__intro p { margin:16px 0 0; color:#aebbd0; line-height:1.7; }
+.portfolio-footer__links { display:grid; grid-template-columns:repeat(2,1fr); gap:48px; }
+.portfolio-footer__links h2 { margin:0 0 15px; color:#fff; font-size:.82rem; text-transform:uppercase; letter-spacing:.07em; }
+.portfolio-footer__links a { display:block; width:max-content; margin:9px 0; color:#c8d3e3!important; font-size:.9rem; text-decoration:none!important; }
+.portfolio-footer__links p { max-width:240px; color:#9fadc2; font-size:.86rem; line-height:1.6; }
+.portfolio-footer__bottom { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-top:22px; border-top:1px solid rgba(255,255,255,.12); }
+.portfolio-footer__bottom>p { margin:0; color:#8f9db3; font-size:.78rem; }
+.portfolio-footer__social ul { display:flex; gap:14px; margin:0; padding:0; list-style:none; }
+.portfolio-footer__social a { color:#c8d3e3!important; }
+@media (max-width:900px) {
+  .portfolio-nav-toggle { display:block; }
+  .portfolio-header__inner { position:relative; }
+  .portfolio-nav { display:none; position:absolute; top:76px; left:0; right:0; padding:18px 24px 24px; flex-direction:column; align-items:stretch; gap:4px; background:#fff; border:1px solid #e7ebf2; box-shadow:0 16px 30px rgba(20,40,70,.12); }
+  .portfolio-nav--open { display:flex; }
+  .portfolio-nav>a { padding:11px 4px; }
+  .portfolio-nav .portfolio-nav__cta { margin-top:8px; text-align:center; }
+  .portfolio-footer__top { grid-template-columns:1fr; gap:42px; }
+}
+@media (max-width:560px) {
+  .portfolio-brand__role { display:none; }
+  .portfolio-footer__links { grid-template-columns:1fr; gap:28px; }
+  .portfolio-footer__bottom { align-items:flex-start; flex-direction:column; }
+}
