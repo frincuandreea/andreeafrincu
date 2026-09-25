@@ -51,3 +51,19 @@
   flex: 0 0 32%;
   margin-bottom: 10px;
 }
+.portfolio-services {
+  .portfolio-cta {
+    .portfolio-button--light {
+      background: #ffffff !important;
+      border-color: #ffffff !important;
+      color: #173d78 !important;
+
+      &:hover, &:focus-visible{
+        background: #eaf1ff !important;
+        border-color: #eaf1ff !important;
+        color: #173d78 !important;
+      }
+    }
+  }
+
+}
