@@ -141,3 +141,46 @@
     justify-content: flex-start;
   }
 }
+
+
+/* Social icon cleanup: override legacy Type-on-Strap list/link styling */
+.portfolio-footer__social ul,
+.portfolio-footer__social li {
+  list-style-type: none !important;
+}
+.portfolio-footer__social li::before,
+.portfolio-footer__social li::after {
+  content: none !important;
+  display: none !important;
+}
+.portfolio-footer__social li {
+  background: none !important;
+}
+.portfolio-footer__social a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #9fb0c8 !important;
+  text-decoration: none !important;
+  transition: color .2s ease, transform .2s ease, opacity .2s ease;
+}
+.portfolio-footer__social a .fa-circle {
+  color: #31435e !important;
+  transition: color .2s ease;
+}
+.portfolio-footer__social a .fa-inverse {
+  color: #dce6f3 !important;
+}
+.portfolio-footer__social a:hover,
+.portfolio-footer__social a:focus-visible {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+.portfolio-footer__social a:hover .fa-circle,
+.portfolio-footer__social a:focus-visible .fa-circle {
+  color: #2456a6 !important;
+}
+.portfolio-footer__social a:hover .fa-inverse,
+.portfolio-footer__social a:focus-visible .fa-inverse {
+  color: #ffffff !important;
+}
