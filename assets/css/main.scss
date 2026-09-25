@@ -362,3 +362,45 @@
 .contact-cta .portfolio-button--light:hover{background:#eaf1ff!important;border-color:#eaf1ff!important;color:#173d78!important}
 @media(max-width:900px){.contact-hero__grid,.contact-focus__grid{grid-template-columns:1fr;gap:45px}.contact-project__grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.contact-hero{padding:62px 0 54px}.contact-details{padding:26px 22px}.contact-project__grid{grid-template-columns:1fr}}
+
+
+/* Individual article layout */
+.portfolio-post{color:#172033}
+.post-hero{padding:76px 0 62px!important;background:linear-gradient(120deg,#f6f9ff 0%,#fff 72%)!important;background-image:none!important;text-align:left!important}
+.post-hero__inner{max-width:940px}
+.post-back{display:inline-block;margin-bottom:32px;color:#657084!important;font-size:.82rem;font-weight:700;text-decoration:none!important}
+.post-back:hover{color:#2456a6!important}
+.post-hero h1{max-width:900px;margin:0;color:#172033!important;font-size:clamp(2.6rem,5vw,4.6rem)!important;line-height:1.06!important;letter-spacing:-.04em;text-shadow:none!important}
+.post-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;color:#718096;font-size:.82rem;font-weight:600}
+.post-feature{max-width:1040px;margin-top:48px}
+.post-feature img{display:block;width:100%;max-height:520px;object-fit:cover;border-radius:16px}
+.post-layout{display:grid;grid-template-columns:minmax(0,760px) 280px;gap:80px;align-items:start;padding-top:72px;padding-bottom:82px}
+.portfolio-post .post-article{width:auto!important;max-width:none!important;margin:0!important;padding:0!important;color:#354052;font-size:1.02rem;line-height:1.82}
+.portfolio-post .post-article>p:first-child{font-size:1.1rem}
+.portfolio-post .post-article h2{margin:2.2em 0 .7em;color:#172033;font-size:1.75rem;line-height:1.25;letter-spacing:-.02em}
+.portfolio-post .post-article h3{margin:1.9em 0 .65em;color:#172033;font-size:1.35rem;line-height:1.3}
+.portfolio-post .post-article h4{color:#172033}
+.portfolio-post .post-article a{color:#2456a6!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.portfolio-post .post-article img{max-width:100%;height:auto;border-radius:8px}
+.portfolio-post .post-article blockquote{margin:30px 0;padding:18px 24px;border-left:3px solid #2456a6;background:#f5f8fc;color:#46546a}
+.portfolio-post .post-article code{border-radius:4px;background:#f0f3f7;padding:.15em .35em;font-size:.9em}
+.portfolio-post .post-article pre{overflow:auto;margin:28px 0;padding:22px;border-radius:10px;background:#111827}
+.portfolio-post .post-article pre code{padding:0;background:transparent;color:inherit}
+.portfolio-post .post-article table{display:block;max-width:100%;overflow-x:auto;margin:28px 0;border-collapse:collapse}
+.portfolio-post .post-article th,.portfolio-post .post-article td{padding:11px 14px;border:1px solid #dfe5ee;text-align:left}
+.portfolio-post .post-article th{background:#f5f8fc;color:#172033}
+.post-sidebar{position:sticky;top:104px;display:grid;gap:22px}
+.post-sidebar__card,.post-sidebar__tags{padding:24px;border:1px solid #e2e8f0;border-radius:12px;background:#fff}
+.post-sidebar__card h2{margin:0 0 10px;font-size:1.1rem}
+.post-sidebar__card>p:not(.portfolio-eyebrow){margin:0 0 15px;color:#657084;font-size:.88rem;line-height:1.65}
+.post-sidebar__card>a{color:#2456a6!important;font-size:.85rem;font-weight:700;text-decoration:none!important}
+.post-sidebar__tags>div{display:flex;flex-wrap:wrap;gap:7px}
+.post-sidebar__tags a{padding:5px 8px;border:1px solid #dce3ed;border-radius:5px;color:#46546a!important;font-size:.72rem;font-weight:700;text-decoration:none!important}
+.post-sidebar__tags a:hover{border-color:#2456a6;color:#2456a6!important}
+.post-end{padding:52px 0;background:#f5f8fc}
+.post-end__inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.post-end h2{margin:0;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.025em}
+.post-comments{padding-top:60px;padding-bottom:60px}
+.portfolio-post-navigation #post-nav{max-width:1180px;margin:0 auto}
+@media(max-width:950px){.post-layout{grid-template-columns:1fr;gap:45px}.post-sidebar{position:static;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.post-hero{padding:55px 0 48px!important}.post-layout{padding-top:50px;padding-bottom:58px}.post-sidebar{grid-template-columns:1fr}.post-end__inner{align-items:flex-start;flex-direction:column}.portfolio-post .post-article{font-size:.98rem}}
