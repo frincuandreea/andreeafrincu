@@ -1,13 +1,18 @@
-<footer class="site-footer">
-    <p class="text">
-        <a href='/'> {{ site.footer_text | default: "Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a>" }}</a>
-           </p>
-            <div class="footer-icons">
-                <ul>
-                <!-- Social icons from Font Awesome, if enabled -->
-                {% include icons.html %}
-                </ul>
-            </div>
+<footer class="portfolio-footer">
+  <div class="portfolio-container">
+    <div class="portfolio-footer__top">
+      <div class="portfolio-footer__intro">
+        <a class="portfolio-footer__brand" href="{{ '/' | relative_url }}">Andreea Frincu</a>
+        <p>Senior Software Engineer &amp; AEM Consultant helping teams build and modernize enterprise web platforms.</p>
+      </div>
+      <div class="portfolio-footer__links">
+        <div><h2>Explore</h2><a href="{{ '/about/' | relative_url }}">About</a><a href="{{ '/services/' | relative_url }}">Services</a><a href="{{ '/blog/' | relative_url }}">Articles</a></div>
+        <div><h2>Work with me</h2><a href="{{ '/contact/' | relative_url }}">Contact</a><p>Remote freelance &amp; B2B projects across Europe</p></div>
+      </div>
+    </div>
+    <div class="portfolio-footer__bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} Andreea Frincu. All rights reserved.</p>
+      <div class="portfolio-footer__social">{% include icons.html %}</div>
+    </div>
+  </div>
 </footer>
-
-
