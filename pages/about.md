@@ -29,7 +29,7 @@ lang: en
     <div class="portfolio-container about-story">
       <div><p class="portfolio-eyebrow">My Approach</p><h2>Enterprise experience with a full-stack perspective.</h2></div>
       <div class="about-story__copy">
-        <p>I have 10 years of hands-on Adobe Experience Manager experience, alongside backend and frontend development. My AEM work includes creating custom components, migrating applications to newer AEM versions, production support, debugging and investigating application performance problems.</p>
+        <p>I have 15+ years of Java experience and 10 years of hands-on Adobe Experience Manager experience, alongside modern frontend development. My AEM work includes creating custom components, migrating applications to newer AEM versions, production support, debugging and investigating application performance problems.</p>
         <p>I enjoy technically challenging projects where clean architecture, maintainability and long-term solutions matter. Beyond implementing requirements, I like understanding the problem behind them, discussing possible approaches with the team and finding solutions that are practical both technically and from a business perspective.</p>
         <p>I am comfortable working across the complete development lifecycle — from analyzing requirements and designing solutions to implementation, integration, debugging and production support. I can join an established development team or work independently on a clearly defined project.</p>
         <p>This blog is where I share useful solutions, experiments and lessons learned from real-world software development.</p>
@@ -46,7 +46,7 @@ lang: en
       <div class="portfolio-section__heading"><p class="portfolio-eyebrow">Technical Expertise</p><h2>Technologies I Work With</h2><p>A combination of enterprise platforms, backend engineering and modern frontend development.</p></div>
       <div class="about-skills">
         <article><h3>Adobe Experience Manager — 10 Years</h3><p>AEM 6.5 · Custom Components · Version Migrations · Support &amp; Debugging · Performance Troubleshooting · OSGi · Apache Sling · HTL / Sightly · DAM · Workflows</p></article>
-        <article><h3>Backend Development</h3><p>Java · Spring Boot · Node.js · NestJS · REST APIs · JPA · Hibernate · SQL</p></article>
+        <article><h3>Java &amp; Backend — 15+ Years</h3><p>Java · Spring Boot · Node.js · NestJS · REST APIs · JPA · Hibernate · SQL</p></article>
         <article><h3>Frontend Development</h3><p>React · Next.js · JavaScript · TypeScript · HTML5 · CSS · SCSS · LESS · jQuery</p></article>
         <article><h3>Tools &amp; Development</h3><p>Git · Maven · npm · IntelliJ IDEA · Visual Studio Code · modern software development workflows</p><small>Additional enterprise experience includes SOAP, Oracle, MySQL, Tomcat and JBoss.</small></article>
       </div>
