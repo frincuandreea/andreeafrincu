@@ -3,8 +3,8 @@ baseurl: "/"
 url: "https://frincuandreea.com"
 
 # THEME-SPECIFIC CONFIGURATION
-title: Andreea Frincu                                    # site's title
-description: "Senior Software Engineer and freelance AEM consultant specializing in Adobe Experience Manager, Java, Spring Boot, React, Next.js and enterprise web development."      # used by search engines
+title: Andreea Ciapsa                                    # site's title
+description: "Andreea Ciapsa (formerly Andreea Frincu) — Senior Software Engineer and freelance AEM consultant specializing in Adobe Experience Manager, Java, Spring Boot, React, Next.js and enterprise web development."      # used by search engines
 avatar: assets/img/mylogo.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
