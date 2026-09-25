@@ -221,3 +221,24 @@
 .about-details strong { color:#172033; }
 @media(max-width:900px){.about-hero__grid,.about-story,.about-values,.about-details__grid{grid-template-columns:1fr;gap:45px}.about-hero__visual{justify-self:start}.about-skills{grid-template-columns:1fr}}
 @media(max-width:560px){.about-hero{padding:58px 0}.about-status{position:relative;right:auto;bottom:auto;width:auto;margin:-20px 14px 0}.about-hero__visual{padding-bottom:0}}
+
+
+/* Keep the shared CTA dark inside legacy page-layout wrappers */
+.portfolio-about .portfolio-cta {
+  background: #173d78 !important;
+  color: #ffffff !important;
+}
+.portfolio-about .portfolio-cta h2 {
+  color: #ffffff !important;
+}
+.portfolio-about .portfolio-cta .portfolio-eyebrow {
+  color: #a9c8ff !important;
+}
+.portfolio-about .portfolio-cta p {
+  color: #d7e2f4 !important;
+}
+.portfolio-about .portfolio-cta .portfolio-button--light {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #173d78 !important;
+}
