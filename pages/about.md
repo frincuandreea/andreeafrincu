@@ -19,7 +19,7 @@ lang: en
         </div>
       </div>
       <div class="about-hero__visual">
-        <div class="about-photo"><img src="{{ '/assets/img/author/imgeu.JPG' | relative_url }}" alt="Andreea Frincu, Senior Software Engineer"></div>
+        <div class="about-photo"><img src="{{ '/assets/img/author/imgeu.JPG' | relative_url }}" alt="Andreea Ciapsa, Senior Software Engineer"></div>
         <div class="about-status"><strong>Available for freelance &amp; B2B projects</strong><span>Remote collaboration across Europe</span></div>
       </div>
     </div>
@@ -32,6 +32,10 @@ lang: en
         <p>Over the years, I have worked across backend and frontend projects, building experience with enterprise Java applications, Adobe Experience Manager and modern web development.</p>
         <p>I enjoy solving practical engineering problems: designing maintainable implementations, integrating systems, improving existing applications and finding solutions that work well within real enterprise environments.</p>
         <p>This blog began as a place to document useful development solutions and recurring implementation challenges. Today, it also reflects how I work: sharing knowledge, learning continuously and focusing on solutions that other developers and teams can use.</p>
+        <div class="about-name-note">
+          <p class="portfolio-eyebrow">A Note About My Name</p>
+          <p>You may also know me as <strong>Andreea Frincu</strong>. After getting married, my name changed to <strong>Andreea Ciapsa</strong>. My earlier technical articles and online work were published under my former name, which is why you may still see both names associated with my work.</p>
+        </div>
       </div>
     </div>
   </section>
