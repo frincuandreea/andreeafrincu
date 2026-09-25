@@ -1,13 +1,87 @@
 ---
 layout: default
 ---
-<div class="home">
-
-    <div id="main_teaser" class="call-out"
-         style="background-image: url('{{ site.header_feature_image | relative_url }}')">
-        <h1>{{site.header_text}} </h1>
+<div class="portfolio-home">
+  <section class="portfolio-hero">
+    <div class="portfolio-container portfolio-hero__grid">
+      <div class="portfolio-hero__content">
+        <p class="portfolio-eyebrow">Senior Software Engineer &amp; Freelance Consultant</p>
+        <h1>AEM &amp; Full-Stack Development for Enterprise Web Platforms</h1>
+        <p class="portfolio-hero__lead">I help companies build, extend and modernize enterprise applications using Adobe Experience Manager, Java and modern web technologies.</p>
+        <div class="portfolio-actions">
+          <a class="portfolio-button portfolio-button--primary" href="{{ '/about/' | relative_url }}">Let's Work Together <span aria-hidden="true">→</span></a>
+          <a class="portfolio-button portfolio-button--secondary" href="#latest-articles">View My Articles</a>
+        </div>
+        <ul class="portfolio-tech-list" aria-label="Core technologies">
+          <li>AEM</li><li>Java</li><li>Spring Boot</li><li>NestJS</li><li>React</li><li>Next.js</li><li>TypeScript</li>
+        </ul>
+        <p class="portfolio-availability"><span aria-hidden="true">●</span> Available for remote freelance &amp; B2B projects across Europe</p>
+      </div>
+      <div class="portfolio-hero__visual">
+        <div class="portfolio-hero__photo-frame">
+          <img src="{{ '/assets/img/author/imgeu.JPG' | relative_url }}" alt="Andreea Frincu, Senior Software Engineer">
+        </div>
+      </div>
     </div>
+  </section>
 
-    {% include blog.html %}
+  <section class="portfolio-section">
+    <div class="portfolio-container">
+      <div class="portfolio-section__heading">
+        <p class="portfolio-eyebrow">Services</p>
+        <h2>How I Can Help</h2>
+        <p>Senior engineering support across AEM, backend and modern frontend development.</p>
+      </div>
+      <div class="portfolio-service-grid">
+        <article class="portfolio-card"><span class="portfolio-card__icon">&lt;/&gt;</span><h3>Adobe Experience Manager</h3><p>AEM components, templates, OSGi services, Apache Sling, HTL, DAM workflows, integrations and custom backend functionality.</p></article>
+        <article class="portfolio-card"><span class="portfolio-card__icon">{ }</span><h3>Java &amp; Backend Development</h3><p>Scalable backend applications and services using Java, Spring Boot, Node.js and NestJS, including REST APIs and integrations.</p></article>
+        <article class="portfolio-card"><span class="portfolio-card__icon">◇</span><h3>Modern Frontend Development</h3><p>Maintainable web applications using React, Next.js, JavaScript and TypeScript with HTML5, CSS, SCSS and LESS.</p></article>
+        <article class="portfolio-card"><span class="portfolio-card__icon">↔</span><h3>Full-Stack &amp; Integration</h3><p>Connecting frontend applications, backend services, APIs and enterprise platforms across the complete application stack.</p></article>
+      </div>
+    </div>
+  </section>
 
+  <section class="portfolio-section portfolio-section--soft">
+    <div class="portfolio-container portfolio-expertise">
+      <div>
+        <p class="portfolio-eyebrow">Core Expertise</p>
+        <h2>Enterprise Experience.<br>Modern Technology.</h2>
+        <p>I combine enterprise Java and AEM experience with modern frontend and full-stack development, allowing me to contribute across different parts of complex web platforms.</p>
+      </div>
+      <div class="portfolio-expertise__groups">
+        <div><h3>Adobe Experience Manager</h3><p>AEM 6.5 · Apache Sling · OSGi · HTL/Sightly · DAM · Workflows</p></div>
+        <div><h3>Backend</h3><p>Java · Spring Boot · Node.js · NestJS · REST APIs · JPA · Hibernate · SQL</p></div>
+        <div><h3>Frontend</h3><p>React · Next.js · JavaScript · TypeScript · HTML5 · CSS · SCSS · LESS</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest-articles" class="portfolio-section">
+    <div class="portfolio-container">
+      <div class="portfolio-section__heading portfolio-section__heading--row">
+        <div><p class="portfolio-eyebrow">From the Blog</p><h2>Latest Technical Articles</h2></div>
+      </div>
+      <div class="portfolio-article-grid">
+        {% assign home_posts = site.posts | where: "lang", page.lang %}
+        {% for post in home_posts limit:3 %}
+        <article class="portfolio-article-card">
+          {% if post.thumbnail %}<a href="{{ post.url | relative_url }}" tabindex="-1"><img src="{{ post.thumbnail | relative_url }}" alt=""></a>{% endif %}
+          <div class="portfolio-article-card__body">
+            <p class="portfolio-article-card__meta">{{ post.date | date: "%B %d, %Y" }}</p>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.content | strip_html | strip_newlines | truncate: 145 }}</p>
+            <a class="portfolio-text-link" href="{{ post.url | relative_url }}">Read article →</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-cta">
+    <div class="portfolio-container portfolio-cta__inner">
+      <div><p class="portfolio-eyebrow">Let's Work Together</p><h2>Looking for an experienced AEM / Java engineer?</h2><p>I'm available for remote freelance and B2B projects with companies and engineering teams across Europe.</p></div>
+      <a class="portfolio-button portfolio-button--light" href="{{ '/about/' | relative_url }}">Discuss Your Project →</a>
+    </div>
+  </section>
 </div>
