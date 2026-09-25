@@ -22,7 +22,7 @@ lang: en
     <div class="portfolio-container">
       <div class="portfolio-section__heading"><p class="portfolio-eyebrow">What I Do</p><h2>Services</h2><p>Focused engineering support for teams working on enterprise and customer-facing web platforms.</p></div>
       <div class="services-grid">
-        <article class="service-detail-card"><span class="service-detail-card__number">01</span><h3>Adobe Experience Manager</h3><p>Development and extension of AEM solutions for enterprise websites and digital platforms.</p><ul><li>AEM 6.5 development</li><li>Components and templates</li><li>Apache Sling and OSGi services</li><li>HTL / Sightly implementation</li><li>DAM workflows and customizations</li><li>Backend integrations and APIs</li></ul></article>
+        <article class="service-detail-card"><span class="service-detail-card__number">01</span><h3>Adobe Experience Manager</h3><p>10 years of hands-on AEM experience building, migrating, supporting and troubleshooting enterprise applications.</p><ul><li>Custom AEM components and functionality</li><li>AEM version migrations and modernization</li><li>Production support and debugging</li><li>Application performance troubleshooting</li><li>Apache Sling, OSGi and HTL / Sightly</li><li>DAM workflows, integrations and APIs</li></ul></article>
         <article class="service-detail-card"><span class="service-detail-card__number">02</span><h3>Java &amp; Backend Development</h3><p>Backend services and integrations designed for maintainability and real-world enterprise environments.</p><ul><li>Java and Java EE</li><li>Spring Boot applications</li><li>Node.js and NestJS</li><li>REST and SOAP integrations</li><li>JPA and Hibernate</li><li>SQL, Oracle and MySQL</li></ul></article>
         <article class="service-detail-card"><span class="service-detail-card__number">03</span><h3>Modern Frontend Development</h3><p>Responsive, maintainable frontend applications and interfaces using modern web technologies.</p><ul><li>React and Next.js</li><li>JavaScript and TypeScript</li><li>HTML5 and semantic markup</li><li>CSS, SCSS and LESS</li><li>Responsive interfaces</li><li>Integration with backend APIs</li></ul></article>
         <article class="service-detail-card"><span class="service-detail-card__number">04</span><h3>Full-Stack &amp; Integration</h3><p>End-to-end engineering across application layers when a project needs more than one specialist boundary.</p><ul><li>Frontend-to-backend integration</li><li>Enterprise system integration</li><li>API design and consumption</li><li>Existing application modernization</li><li>Technical troubleshooting</li><li>Cross-team engineering support</li></ul></article>
@@ -56,7 +56,7 @@ lang: en
 
   <section class="portfolio-cta">
     <div class="portfolio-container portfolio-cta__inner">
-      <div><p class="portfolio-eyebrow">Have a Project?</p><h2>Let's discuss what your team needs.</h2><p>I'm available for remote freelance and B2B projects across Europe, with a focus on AEM, Java and full-stack web development.</p></div>
+      <div><p class="portfolio-eyebrow">Have a Project?</p><h2>Let's discuss what your team needs.</h2><p>I'm available for remote freelance and B2B projects, with a focus on AEM, Java and full-stack web development.</p></div>
       <a class="portfolio-button portfolio-button--light" href="{{ '/contact/' | relative_url }}">Discuss Your Project →</a>
     </div>
   </section>
