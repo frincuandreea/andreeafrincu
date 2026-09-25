@@ -404,3 +404,10 @@
 .portfolio-post-navigation #post-nav{max-width:1180px;margin:0 auto}
 @media(max-width:950px){.post-layout{grid-template-columns:1fr;gap:45px}.post-sidebar{position:static;grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.post-hero{padding:55px 0 48px!important}.post-layout{padding-top:50px;padding-bottom:58px}.post-sidebar{grid-template-columns:1fr}.post-end__inner{align-items:flex-start;flex-direction:column}.portfolio-post .post-article{font-size:.98rem}}
+
+
+/* Former-name context */
+.about-name-note{margin-top:28px;padding:20px 22px;border-left:3px solid #2456a6;background:#f5f8fc;border-radius:0 9px 9px 0}
+.about-name-note .portfolio-eyebrow{margin-bottom:7px}
+.about-name-note>p:last-child{margin:0;color:#657084;font-size:.94rem;line-height:1.7}
+.about-name-note strong{color:#172033}
